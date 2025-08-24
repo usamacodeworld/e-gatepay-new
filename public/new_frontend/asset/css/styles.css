@@ -1,0 +1,1525 @@
+/* Font and Base Styles */
+body {
+  font-family: "Moderat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+@font-face {
+  font-family: "Millik";
+  src: url("../fonts/Millik.df4df2a.ttf") format("woff2"), url("../fonts/Millik.df4df2a.ttf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .gatepay-h1 {
+    font-size: 5rem;
+    line-height: 5.6rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .gatepay-h1 {
+    font-size: 3.6rem;
+    line-height: 4.4rem;
+  }
+}
+
+.gatepay-h2 {
+  font-family: "Millik", sans-serif;
+  font-size: 5rem;
+  font-weight: 500;
+  line-height: 4.8rem;
+  color: #1f2937;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .gatepay-h2 {
+    font-size: 3.2rem;
+    line-height: 3rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .gatepay-h2 {
+    font-size: 2.4rem;
+    line-height: 2.3rem;
+  }
+}
+
+.gatepay-h3 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.9rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .gatepay-h3 {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+  }
+}
+
+.gatepay-p {
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 3.2rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .gatepay-p {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+  }
+}
+
+.gatepay-p:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.gatepay-p.gatepay-sm {
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .gatepay-p.gatepay-sm {
+    font-size: 1.8rem;
+  }
+}
+
+.gatepay-p.gatepay-md {
+  font-size: 3rem;
+  line-height: 4rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .gatepay-p.gatepay-md {
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+  }
+}
+
+p .gatepay-link {
+  color: #7c3aed;
+  display: inline-block;
+  font-weight: 400;
+  padding: 0 .2rem;
+  text-decoration: none;
+}
+
+/* Colors - Professional E-Gatepay Brand Colors */
+.gatepay-color-orange {
+  color: #e6513e; /* Professional orange from logo */
+}
+
+.gatepay-color-green {
+  color: #7c3aed; /* Primary purple from logo */
+}
+
+.gatepay-color-pink {
+  color: #ec4899; /* Vibrant pink from logo */
+}
+
+.gatepay-color-pink-darker {
+  color: #be185d; /* Darker pink */
+}
+
+.gatepay-color-purple {
+  color: #8b5cf6; /* Secondary purple from logo */
+}
+
+/* Header Styles */
+.gatepay-header {
+  z-index: 1000;
+  background: white;
+}
+
+.navbar {
+  padding: 1rem 0;
+  background: white;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.navbar-brand img {
+  height: 42px;
+  width: auto;
+}
+
+.navbar-brand svg {
+  width: 185px;
+  height: auto;
+}
+
+.navbar-nav {
+  gap: 2rem;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: #333 !important;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  border: none;
+  background: none;
+}
+
+.navbar-nav .nav-link::after {
+  display: none !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #7c3aed !important;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1rem 0;
+  display: none;
+  margin-top: 0.5rem;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1.5rem;
+  font-weight: 400;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #7c3aed;
+}
+
+/* New style for the "Sign in" button in the header */
+.navbar-nav .gatepay-btn-header-signin {
+  background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+  border-radius: 6px;
+  padding: 0.6rem 1.5rem;
+  color: white !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-left: 1rem;
+  border: none;
+  transition: all 0.3s ease;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-nav .gatepay-btn-header-signin:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%);
+  transform: translateY(-1px);
+  color: #fff !important;
+}
+
+/* Location Modal Styles */
+.gatepay-location-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.gatepay-location-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gatepay-location-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.gatepay-location-modal__content {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.gatepay-location-modal.active .gatepay-location-modal__content {
+  transform: scale(1);
+}
+
+.gatepay-location-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.gatepay-location-modal__header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.gatepay-location-modal__close {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  color: #666;
+}
+
+.gatepay-location-modal__close:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.gatepay-location-modal__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem;
+}
+
+.gatepay-location-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.gatepay-location-item:hover {
+  background-color: #f8f9fa;
+  border-color: #7c3aed;
+}
+
+.gatepay-location-item__flag {
+  width: 24px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.gatepay-location-item__name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Hero Section */
+.gatepay-hero {
+  padding: 6rem 0;
+}
+
+.gatepay-hero__heading {
+  font-family: "Millik", sans-serif;
+  font-size: 5rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  color: #1f2937;
+}
+
+.gatepay-hero__sub-heading {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+/* Button Styles */
+.btn.btn-primary {
+  background: linear-gradient(135deg, #7c3aed 0%, #f97316 100%);
+  border: none;
+  padding: 1.1rem 2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.btn.btn-primary:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #ea580c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+}
+
+.btn.gatepay-btn-inline {
+  background: none;
+  border: none;
+  color: #7c3aed;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn.gatepay-btn-inline:hover {
+  color: #6d28d9;
+  text-decoration: none;
+}
+
+.btn.gatepay-btn-inline.gatepay-orange {
+  color: #e6513e;
+}
+
+.btn.gatepay-btn-inline.gatepay-orange:hover {
+  color: #fa8140;
+}
+
+.btn.gatepay-btn-inline.gatepay-white {
+  color: white;
+}
+
+.btn.gatepay-btn__icon {
+  transition: transform 0.3s ease;
+}
+
+.gatepay-btn--lg {
+  padding: 2.8rem 3.2rem !important;
+}
+
+.gatepay-btn-inline:hover .gatepay-btn__icon {
+  transform: translateX(3px);
+}
+
+/* Customer Section */
+.gatepay-section--customers {
+  padding: 3rem 0;
+}
+
+.gatepay-customer-grid {
+  align-items: flex-start;
+}
+
+.gatepay-customer {
+  position: relative;
+  margin: 0;
+}
+
+.gatepay-customer__image {
+  width: 100%;
+  object-fit: cover;
+}
+
+#home .gatepay-section--customers .gatepay-customer-grid__section:nth-child(1) {
+  width: calc(58% - 3.25rem);
+}
+
+#home .gatepay-section--customers .gatepay-customer-grid__section__meta {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 3.2rem;
+  margin-top: 7.4rem;
+  max-width: 38rem;
+}
+
+/* Default layout: Image above, paragraph below (for larger screens) */
+.gatepay-customer-grid__section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* On smaller screens (e.g., max-width 767px for mobile breakpoint; adjust as needed), swap order */
+@media (max-width: 767px) {
+  .gatepay-customer-grid__section .gatepay-image-wrapper {
+    order: 2;
+  }
+  .gatepay-customer-grid__section .gatepay-customer-grid__section__meta {
+    order: 1;
+  }
+}
+
+#home .gatepay-section--customers .container {
+  max-width: 105rem !important;
+}
+
+#home .gatepay-section--customers .gatepay-customer-grid__section:nth-child(2) {
+  margin-top: -10rem;
+  width: calc(42% - 1.25rem);
+}
+
+#home .gatepay-section--customers .gatepay-customer-grid__section:nth-child(1) .gatepay-customer__image {
+  height: 65.2rem;
+  object-position: 30% 50%;
+}
+
+.gatepay-img-m-left {
+  margin-left: 7.25rem;
+}
+
+.gatepay-customer__name {
+  position: absolute;
+  bottom: 1rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+}
+
+.gatepay-customer__name--sweetpod {
+  right: 0;
+  text-align: right;
+}
+
+.gatepay-customer__name--e25dresses {
+  left: 0;
+  text-align: left;
+}
+
+.gatepay-customer-grid__section__meta {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 3.2rem;
+  margin-top: 7.4rem;
+  max-width: 38rem;
+}
+
+/* Businesses Section */
+.gatepay-section--businesses {
+  padding: 3rem 0;
+}
+
+.gatepay-businesses__intro {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.gatepay-businesses__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.gatepay-business__logo {
+  height: 40px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  max-width: 150px;
+}
+
+.gatepay-business__logo:hover {
+  opacity: 1;
+}
+
+.gatepay-section.gatepay-light {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.gatepay-section.gatepay-dark {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  color: white;
+}
+
+.gatepay-h1 {
+  font-family: "Millik", sans-serif;
+  font-size: 5rem !important;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 6.6rem;
+  width: 50%;
+}
+
+.gatepay-p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.gatepay-section.gatepay-dark .gatepay-p {
+  color: #ccc;
+}
+
+.gatepay-p.gatepay-loud {
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 6rem;
+  margin-bottom: 4.8rem;
+  color: #000;
+}
+
+/* Features Grid */
+.gatepay-features-grid {
+  margin-top: 3rem;
+}
+
+.gatepay-feature {
+  padding: 2rem 0;
+}
+
+.gatepay-feature__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.9rem;
+  color: #7c3aed;
+}
+
+.gatepay-section.gatepay-dark .gatepay-feature__title {
+  color: white;
+}
+
+.gatepay-feature__description {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  padding-left: .5rem;
+}
+
+.gatepay-section.gatepay-dark .gatepay-feature__description {
+  color: #ccc;
+}
+
+.gatepay-features-grid__section.gatepay-media img {
+  width: 100%;
+  height: 650px;
+  object-fit: contain;
+  filter: drop-shadow(0px 4px 20px rgba(124, 58, 237, 0.2));
+}
+
+/* Commerce Features */
+.gatepay-commerce-features {
+  margin-top: 3rem;
+  align-items: center;
+}
+
+.gatepay-figure {
+  margin: 0;
+}
+
+.gatepay-figure img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.gatepay-figure__caption {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #666;
+}
+
+/* Sliding Cards Section */
+.gatepay-section--individual {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  color: white;
+  overflow: hidden;
+}
+
+.gatepay-sliding-cards {
+  position: relative;
+  height: 350px;
+  margin-top: 4rem;
+}
+
+.gatepay-sliding-cards .col-lg-4 {
+  position: absolute;
+  width: 33.333%;
+  height: 100%;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding: 0 15px;
+}
+
+.gatepay-sliding-cards .col-lg-4:nth-child(1) {
+  z-index: 3;
+  left: 0%;
+  transform: translateX(0%);
+}
+
+.gatepay-sliding-cards .col-lg-4:nth-child(2) {
+  z-index: 2;
+  left: 25%;
+  transform: translateX(0%);
+}
+
+.gatepay-sliding-cards .col-lg-4:nth-child(3) {
+  z-index: 1;
+  left: 50%;
+  transform: translateX(0%);
+}
+
+/* Hover Effects - Cards spread out to show all content */
+.gatepay-sliding-cards:hover .col-lg-4:nth-child(1) {
+  left: 0%;
+  transform: translateX(0%);
+}
+
+.gatepay-sliding-cards:hover .col-lg-4:nth-child(2) {
+  left: 33.333%;
+  transform: translateX(0%);
+}
+
+.gatepay-sliding-cards:hover .col-lg-4:nth-child(3) {
+  left: 66.666%;
+  transform: translateX(0%);
+}
+
+.gatepay-sliding-cards .gatepay-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  margin: 0;
+  backdrop-filter: blur(20px);
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.gatepay-sliding-cards .gatepay-card:hover {
+  background: rgba(124, 58, 237, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.4);
+  border-color: rgba(124, 58, 237, 0.5);
+}
+
+.gatepay-sliding-cards .gatepay-card__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: white;
+  line-height: 1.3;
+}
+
+.gatepay-sliding-cards .gatepay-card__description {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.gatepay-sliding-cards .gatepay-card__description a {
+  color: #ec4899;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.gatepay-sliding-cards .gatepay-card__description a:hover {
+  color: #f97316;
+  text-decoration: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+  .gatepay-sliding-cards {
+    height: auto;
+    position: static;
+  }
+  .gatepay-sliding-cards .col-lg-4 {
+    position: static;
+    width: 100%;
+    height: auto;
+    left: auto !important;
+    transform: none !important;
+    margin-bottom: 2rem;
+  }
+  .gatepay-sliding-cards:hover .col-lg-4:nth-child(1),
+  .gatepay-sliding-cards:hover .col-lg-4:nth-child(2),
+  .gatepay-sliding-cards:hover .col-lg-4:nth-child(3) {
+    left: auto;
+    transform: none;
+  }
+  .gatepay-sliding-cards .gatepay-card {
+    height: auto;
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gatepay-sliding-cards .gatepay-card {
+    padding: 2rem 1.5rem;
+  }
+  .gatepay-sliding-cards .gatepay-card__title {
+    font-size: 1.2rem;
+  }
+  .gatepay-sliding-cards .gatepay-card__description {
+    font-size: 0.9rem;
+  }
+  .gatepay-location-modal__content {
+    padding: 1.5rem;
+    width: 95%;
+  }
+  .gatepay-location-modal__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* API Section */
+.gatepay-ul.gatepay-main {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.gatepay-ul.gatepay-main li {
+  padding: 0.75rem 0;
+  padding-left: 2rem;
+  position: relative;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.gatepay-ul.gatepay-main li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #7c3aed;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.gatepay-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.gatepay-global-reach {
+  overflow: hidden;
+}
+
+.gatepay-global-reach .gatepay-h1 {
+  margin-bottom: 10.6rem;
+  max-width: 84.2rem;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.gatepay-global-reach .gatepay-h1 .gatepay-color-purple {
+  color: #8b5cf6;
+}
+
+@media only screen and (max-width: 46.875em) {
+  .gatepay-global-reach .gatepay-h1 {
+    margin-bottom: 3.5rem;
+    font-size: 3rem;
+  }
+}
+
+.gatepay-global-reach .gatepay-grid {
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.gatepay-global-reach .gatepay-grid__section {
+  flex: 0 1 auto;
+  width: 50%;
+}
+
+@media only screen and (max-width: 46.875em) {
+  .gatepay-global-reach .gatepay-grid__section {
+    width: 100%;
+  }
+}
+
+.gatepay-global-reach .gatepay-grid__section .gatepay-figure {
+  height: 75.1rem;
+  margin-top: -12rem;
+  width: 75.1rem;
+}
+
+.gatepay-global-reach .gatepay-stats {
+  position: relative;
+}
+
+.gatepay-global-reach .gatepay-stats::before {
+  background-image: url(../images/dots.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: .5rem;
+  width: .1rem;
+}
+
+.gatepay-global-reach .gatepay-stat__heading::before {
+  border: 1.5px solid #7c3aed;
+  content: "";
+  height: 2.5rem;
+  left: -3.7rem;
+  position: absolute;
+  top: .5rem;
+}
+
+.gatepay-global-reach .gatepay-stat {
+  padding-left: 3.7rem;
+}
+
+.gatepay-global-reach .gatepay-stat:not(:last-child) {
+  margin-bottom: 6.2rem;
+}
+
+.gatepay-global-reach .gatepay-stat__heading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  color: #7c3aed;
+}
+
+.gatepay-global-reach .gatepay-stat__heading .gatepay-link {
+  color: #7c3aed;
+  text-decoration: none;
+}
+
+.gatepay-global-reach .gatepay-stat__list {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  max-width: 40rem;
+  padding-left: 0;
+}
+
+.gatepay-global-reach .gatepay-stat__list li {
+  flex: 0 0 auto;
+  margin-bottom: 1.2rem;
+  width: calc(50% - 3rem);
+}
+
+.gatepay-global-reach .gatepay-globe {
+  --globe-size: 40rem;
+  position: relative;
+  width: var(--globe-size);
+  height: var(--globe-size);
+  background: #2d3748;
+  margin-top: -6rem;
+  border-radius: 100%;
+  margin-left: auto;
+  transform: translateX(2%);
+  box-shadow: 0 0 50px rgba(45, 55, 72, 0.3);
+}
+
+@media only screen and (max-width: 46.875em) {
+  .gatepay-global-reach .gatepay-globe {
+    --globe-size: 65vw;
+    margin: 5rem auto 0;
+    transform: translateX(0%);
+  }
+}
+
+@media only screen and (max-width: 31.25em) {
+  .gatepay-global-reach .gatepay-globe {
+    margin-top: 4rem;
+    margin-bottom: -2.4rem;
+  }
+}
+
+.gatepay-global-reach .gatepay-globe__container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+  clip-path: inset(0%);
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.3) 1px, transparent 0);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+.gatepay-global-reach .gatepay-globe__blinking-dot {
+  position: absolute;
+  --size: 9px;
+  width: var(--size);
+  height: var(--size);
+  --anim-delay: 0.2s;
+  border-radius: 30px;
+  background: #ec4899;
+  top: 48%;
+  left: 125%;
+  transform: scale(0);
+  animation: blink 1.3s ease-in-out var(--anim-delay) infinite;
+  opacity: 0.7;
+}
+
+.gatepay-global-reach .gatepay-globe__blinking-dot:nth-child(1) {
+  --size: 11px;
+}
+
+.gatepay-global-reach .gatepay-globe__blinking-dot:nth-child(2) {
+  --anim-delay: -0.2s;
+  left: 138%;
+  top: 75%;
+  background: #7c3aed;
+}
+
+@media only screen and (max-width: 46.875em) {
+  .gatepay-global-reach .gatepay-globe__blinking-dot:nth-child(2) {
+    top: 70%;
+    left: 132%;
+  }
+}
+
+.gatepay-global-reach .gatepay-globe__blinking-dot:nth-child(3) {
+  --anim-delay: 0.4s;
+  left: 146%;
+  top: 55%;
+  background: #8b5cf6;
+}
+
+@media only screen and (max-width: 46.875em) {
+  .gatepay-global-reach .gatepay-globe__blinking-dot:nth-child(3) {
+    left: 140%;
+  }
+}
+
+.gatepay-global-reach .gatepay-globe__blinking-dot:nth-child(4) {
+  --anim-delay: -0.1s;
+  left: 117%;
+  top: 18%;
+  background: #f97316;
+}
+
+.gatepay-global-reach .gatepay-globe__blinking-dot:nth-child(5) {
+  --size: 11px;
+  --anim-delay: -0.3s;
+  left: 85%;
+  top: 60%;
+  background: #7c3aed;
+}
+
+.gatepay-global-reach .gatepay-globe__blinking-dot:nth-child(6) {
+  --anim-delay: -0.5s;
+  left: 140%;
+  top: 64%;
+  background: #ec4899;
+}
+
+.gatepay-global-reach .gatepay-globe__blinking-dot:nth-child(7) {
+  --anim-delay: -0.1s;
+  left: 127%;
+  top: 26%;
+  background: #f97316;
+}
+
+.gatepay-global-reach .gatepay-globe__blinking-dot:nth-child(8) {
+  --size: 11px;
+  left: 54%;
+  top: 26%;
+  background: #ec4899;
+}
+
+@media only screen and (max-width: 46.875em) {
+  .gatepay-global-reach .gatepay-globe__blinking-dot {
+    --size: 5px;
+  }
+  .gatepay-global-reach .gatepay-globe__blinking-dot:nth-child(1),
+  .gatepay-global-reach .gatepay-globe__blinking-dot:nth-child(5),
+  .gatepay-global-reach .gatepay-globe__blinking-dot:nth-child(8) {
+    --size: 7px;
+  }
+}
+
+.gatepay-global-reach .gatepay-globe__map {
+  --translate-value: 0;
+  --anim-play-state: running;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  animation-play-state: var(--anim-play-state);
+  display: flex;
+  flex-direction: row;
+}
+
+.gatepay-global-reach .gatepay-globe__map.gatepay-animation {
+  --anim-duration: 12s;
+  animation: move-map var(--anim-duration) linear infinite;
+}
+
+@media only screen and (max-width: 46.875em) {
+  .gatepay-global-reach .gatepay-globe__map.gatepay-animation {
+    --anim-duration: 10s;
+  }
+}
+
+.gatepay-global-reach .gatepay-globe__map img {
+  height: calc(var(--globe-size) + 12rem);
+  object-position: top center;
+  transform-origin: top left;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+@media only screen and (max-width: 46.875em) {
+  .gatepay-global-reach .gatepay-globe__map img {
+    height: calc(var(--globe-size) + 8.4vw);
+  }
+}
+
+.gatepay-global-reach .gatepay-globe svg {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: var(--globe-size);
+  height: var(--globe-size);
+  transform: scale(1.58);
+}
+
+.gatepay-global-reach .gatepay-globe svg path {
+  opacity: 0.8;
+  stroke-width: 1.3;
+}
+
+.gatepay-global-reach .gatepay-globe svg path:nth-child(1) {
+  stroke-dasharray: 1510;
+  stroke-dashoffset: 1510;
+  stroke: #7c3aed;
+  animation: draw-arc-1510 3.5s ease-in-out 0.5s infinite;
+}
+
+@keyframes draw-arc-1510 {
+  35% {
+    stroke-dashoffset: 0;
+  }
+  70% {
+    stroke-dashoffset: calc(1510 * 2);
+  }
+  100% {
+    stroke-dashoffset: 1510;
+  }
+}
+
+.gatepay-global-reach .gatepay-globe svg path:nth-child(2) {
+  stroke: #f97316;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  animation: draw-arc-1400 4s ease-in-out 3s infinite;
+}
+
+@keyframes draw-arc-1400 {
+  35% {
+    stroke-dashoffset: 0;
+  }
+  70% {
+    stroke-dashoffset: calc(1400 * 2);
+  }
+  100% {
+    stroke-dashoffset: 1400;
+  }
+}
+
+.gatepay-global-reach .gatepay-globe svg path:nth-child(3) {
+  stroke: #8b5cf6;
+  stroke-dasharray: 1555;
+  stroke-dashoffset: 1555;
+  animation: draw-arc-1555 5s ease-in-out 2s infinite;
+}
+
+@keyframes draw-arc-1555 {
+  35% {
+    stroke-dashoffset: 0;
+  }
+  70% {
+    stroke-dashoffset: calc(1555 * 2);
+  }
+  100% {
+    stroke-dashoffset: 1555;
+  }
+}
+
+.gatepay-global-reach .gatepay-globe svg path:nth-child(4) {
+  stroke: #ec4899;
+  stroke-dasharray: 1380;
+  stroke-dashoffset: 1380;
+  animation: draw-arc-1380 4.2s ease-in-out 0.6s infinite;
+}
+
+@keyframes draw-arc-1380 {
+  35% {
+    stroke-dashoffset: 0;
+  }
+  70% {
+    stroke-dashoffset: calc(1380 * 2);
+  }
+  100% {
+    stroke-dashoffset: 1380;
+  }
+}
+
+@keyframes move-map {
+  to {
+    transform: translateX(calc(var(--translate-value) * -1%));
+  }
+}
+
+@keyframes blink {
+  40% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(0);
+  }
+}
+
+.gatepay-cl {
+  padding: 10rem 2rem;
+}
+
+.gatepay-cl__box {
+  margin: 0 auto;
+  max-width: 109.2rem;
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  border-radius: 2rem;
+  box-shadow: 0px 25px 50px rgba(124, 58, 237, 0.3);
+  color: #fff;
+  padding: 3rem;
+}
+
+.gatepay-cl__wrapper {
+  margin: 2rem auto;
+  max-width: 74.2rem;
+}
+
+.gatepay-cl__heading {
+  font-family: "Millik", sans-serif;
+  font-size: 5rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 5.4rem;
+  margin-bottom: 3.1rem;
+  color: #fff;
+}
+
+.gatepay-cl__sub-heading {
+  font-size: 2.2rem;
+  line-height: 3.2rem;
+  margin-bottom: 6.6rem;
+}
+
+.gatepay-cl__ctas {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: -15px;
+}
+
+.gatepay-btn--inline.gatepay-white {
+  color: #fff;
+}
+
+.gatepay-btn--inline svg {
+  --scale: 0.85;
+  transform: scale(var(--scale));
+  transition: .6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gatepay-btn__icon {
+  fill: currentColor;
+  flex: 0 0 auto;
+  height: auto;
+  margin-left: .9rem;
+  width: 0.7rem;
+}
+
+.gatepay-cl__cta {
+  margin-top: 15px;
+}
+
+/* Popup Banner */
+.gatepay-popup-banner {
+  background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.gatepay-popup-banner__info {
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Footer */
+.gatepay-footer {
+  background-color: #f8f9fa;
+  padding: 3rem 0 1rem;
+}
+
+.gatepay-footer__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.gatepay-footer__group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gatepay-footer__section__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #7c3aed;
+  margin-bottom: 1rem;
+}
+
+.gatepay-footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.gatepay-footer__nav--inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.gatepay-footer__nav__link {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.gatepay-footer__nav__link:hover {
+  color: #7c3aed;
+  text-decoration: none;
+}
+
+.gatepay-footer__text {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  margin: 2rem 0 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.gatepay-location {
+  display: flex;
+  align-items: center;
+}
+
+.gatepay-location__toggler {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gatepay-location__toggler:hover {
+  border-color: #7c3aed;
+  background-color: #f9f9f9;
+}
+
+.gatepay-location__flag {
+  width: 20px;
+  height: auto;
+}
+
+.gatepay-location__name {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Mobile Styles */
+.gatepay-mobile-only {
+  display: none;
+}
+
+.gatepay-footer__section__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.gatepay-footer__section__icon {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gatepay-businesses__list {
+    gap: 2rem;
+  }
+  .gatepay-business__logo {
+    height: 30px;
+  }
+  .gatepay-globe__map img {
+    width: 300px;
+  }
+  .gatepay-cl__heading {
+    font-size: 3rem;
+  }
+  .gatepay-footer__section__icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    fill: #666;
+  }
+  .gatepay-footer__nav {
+    display: none;
+  }
+  .gatepay-footer__section__head.active + .gatepay-footer__nav {
+    display: flex;
+  }
+}
+
+@media (max-width: 576px) {
+  .gatepay-hero {
+    padding: 3rem 0;
+  }
+  .gatepay-hero__heading {
+    font-size: 2rem;
+  }
+  .gatepay-section {
+    padding: 3rem 0;
+  }
+  .gatepay-businesses__list {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gatepay-hero,
+.gatepay-section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Loading states */
+.gatepay-image__loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 800px) {
+  #home .gatepay-section--customers .gatepay-customer-grid__section:nth-child(1) .gatepay-customer__image {
+    height: 40.2rem;
+    object-position: 30% 50%;
+  }
+  .gatepay-customer-grid__section__meta {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 2.2rem;
+    margin-top: 3.4rem;
+    max-width: 38rem;
+  }
+  .gatepay-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  #home .gatepay-section--customers .gatepay-customer-grid__section:nth-child(2) {
+    margin-top: -4rem;
+    width: calc(52% - 3.25rem);
+  }
+  .gatepay-h1 {
+    font-family: "Millik", sans-serif;
+    font-size: 3rem !important;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 4.6rem;
+    width: 85%;
+  }
+  #home .gatepay-section--customers .gatepay-customer-grid__section:nth-child(1) {
+    width: calc(100% - 0rem);
+  }
+  #home .gatepay-section--customers .container {
+    max-width: 168rem;
+  }
+  #home .gatepay-section--customers .gatepay-customer-grid__section:nth-child(2) {
+    margin-top: -10rem;
+    width: calc(100% - 0rem);
+  }
+  #home .gatepay-section--customers .gatepay-customer-grid__section:nth-child(1) .gatepay-customer__image {
+    height: 65.2rem;
+    object-position: 30% 50%;
+  }
+  .gatepay-p.gatepay-loud {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 3rem;
+    margin-bottom: 4.8rem;
+    color: #000;
+  }
+  .gatepay-cl {
+    padding: 4rem 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .gatepay-h1 {
+    font-family: "Millik", sans-serif;
+    font-size: 2rem !important;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 3.6rem;
+    width: 71%;
+  }
+  #home .gatepay-section--customers .gatepay-customer-grid__section:nth-child(1) .gatepay-customer__image {
+    height: 40.2rem;
+    object-position: 30% 50%;
+  }
+}

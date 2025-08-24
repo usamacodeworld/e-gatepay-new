@@ -1,0 +1,23 @@
+[05-Aug-2025 16:07:24 UTC] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.3.0". You are running 8.2.28. in /home/brandsv/test2.brandsvalley.net/vendor/composer/platform_check.php on line 26
+[23-Aug-2025 12:58:02 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: Writing to the log file failed: Write of 4217 bytes failed with errno=122 Disk quota exceeded
+The exception occurred while attempting to log: file_put_contents(): Write of 429 bytes failed with errno=122 Disk quota exceeded
+Context: {"exception":{}} in /home/egatepay/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:186
+Stack trace:
+#0 /home/egatepay/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): Monolog\Handler\StreamHandler->write(Object(Monolog\LogRecord))
+#1 /home/egatepay/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(391): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#2 /home/egatepay/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(646): Monolog\Logger->addRecord(Object(Monolog\Level), 'file_put_conten...', Array)
+#3 /home/egatepay/public_html/vendor/laravel/framework/src/Illuminate/Log/Logger.php(184): Monolog\Logger->error('file_put_conten...', Array)
+#4 /home/egatepay/public_html/vendor/laravel/framework/src/Illuminate/Log/Logger.php(97): Illuminate\Log\Logger->writeLog('error', 'file_put_conten...', Array)
+#5 /home/egatepay/public_html/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(701): Illuminate\Log\Logger->error('file_put_conten...', Array)
+#6 /home/egatepay/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(380): Illuminate\Log\LogManager->error('file_put_conten...', Array)
+#7 /home/egatepay/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(343): Illuminate\Foundation\Exceptions\Handler->reportThrowable(Object(ErrorException))
+#8 /home/egatepay/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(901): Illuminate\Foundation\Exceptions\Handler->report(Object(ErrorException))
+#9 /home/egatepay/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(815): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#10 /home/egatepay/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(706): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#11 /home/egatepay/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(594): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse(Object(Illuminate\Http\Request), Object(UnexpectedValueException))
+#12 /home/egatepay/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(219): Illuminate\Foundation\Exceptions\Handler->render(Object(Illuminate\Http\Request), Object(UnexpectedValueException))
+#13 /home/egatepay/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(UnexpectedValueException))
+#14 /home/egatepay/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(256): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(UnexpectedValueException))
+#15 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}(Object(UnexpectedValueException))
+#16 {main}
+  thrown in /home/egatepay/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 186
