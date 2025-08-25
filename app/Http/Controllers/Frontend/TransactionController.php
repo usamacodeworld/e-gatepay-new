@@ -2,46 +2,97 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Enums\TrxType;
-use App\Exceptions\NotifyErrorException;
-use App\Http\Controllers\Controller;
-use App\Models\Currency;
-use Barryvdh\DomPDF\Facade\Pdf;
-use DB;
-use Exception;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Log;
-use Transaction;
-use Wallet;
+use Exception;
+use App\Enums\TrxType;
+use App\Models\Currency;
+use Illuminate\Support\Facades\DB;
+use App\Models\Transaction;
+use App\Models\Wallet;
+use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use App\Exceptions\NotifyErrorException;
 
 class TransactionController extends Controller
 {
     public function index()
     {
-        $transactions = Transaction::getTransactions(
-            user_id: auth()->user()->id,
-            status: 'failed',
-            search: request('search'),
-            dateRange: request('daterange')
-        );
+        $query = Transaction::query()->where('user_id', auth()->user()->id)->where('status', 'failed');
+
+        if (request()->has('search') && !empty(request('search'))) {
+            $search = request('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('trx_id', 'LIKE', "%{$search}%")
+                    ->orWhere('provider', 'LIKE', "%{$search}%")
+                    ->orWhere('description', 'LIKE', "%{$search}%")
+                    ->orWhereHas('user', function ($userQuery) use ($search) {
+                        $userQuery->where('email', 'LIKE', "%{$search}%");
+                    });
+            });
+        }
+
+        if (request()->has('currency') && !empty(request('currency'))) {
+            $query->where('currency', request('currency'));
+        }
+
+        if (request()->has('daterange') && !empty(request('daterange'))) {
+            $dates = explode(' - ', request('daterange'));
+            if (count($dates) == 2) {
+                $from = date('Y-m-d 00:00:00', strtotime($dates[0]));
+                $to   = date('Y-m-d 23:59:59', strtotime($dates[1]));
+                $query->whereBetween('created_at', [$from, $to]);
+            }
+        }
+
+        $perPage = request('per_page', 10);
+
+        $transactions = $query->orderBy('created_at', 'desc')->paginate($perPage)->appends(request()->query());
 
         $currency = Currency::where('status', 1)->get();
+
         $page_name = 'Monitoring';
 
         return view('frontend.user.transaction.index', compact('transactions', 'currency', 'page_name'));
     }
 
+
     public function successful()
     {
-        $transactions = Transaction::getTransactions(
-            user_id: auth()->user()->id,
-            status: 'completed',
-            search: request('search'),
-            dateRange: request('daterange')
-        );
+        $query = Transaction::query()->where('user_id', auth()->user()->id)->where('status', 'completed');
+
+        if (request()->has('search') && !empty(request('search'))) {
+            $search = request('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('trx_id', 'LIKE', "%{$search}%")
+                    ->orWhere('provider', 'LIKE', "%{$search}%")
+                    ->orWhere('description', 'LIKE', "%{$search}%")
+                    ->orWhereHas('user', function ($userQuery) use ($search) {
+                        $userQuery->where('email', 'LIKE', "%{$search}%");
+                    });
+            });
+        }
+
+        if (request()->has('currency') && !empty(request('currency'))) {
+            $query->where('currency', request('currency'));
+        }
+
+        if (request()->has('daterange') && !empty(request('daterange'))) {
+            $dates = explode(' - ', request('daterange'));
+            if (count($dates) == 2) {
+                $from = date('Y-m-d 00:00:00', strtotime($dates[0]));
+                $to   = date('Y-m-d 23:59:59', strtotime($dates[1]));
+                $query->whereBetween('created_at', [$from, $to]);
+            }
+        }
+
+        $perPage = request('per_page', 10);
+
+        $transactions = $query->orderBy('created_at', 'desc')->paginate($perPage)->appends(request()->query());
 
         $currency = Currency::where('status', 1)->get();
+
         $page_name = 'Successful Transactions';
 
         return view('frontend.user.transaction.index', compact('transactions', 'currency', 'page_name'));
@@ -49,14 +100,39 @@ class TransactionController extends Controller
 
     public function archived()
     {
-        $transactions = Transaction::getTransactions(
-            user_id: auth()->user()->id,
-            status: null,
-            search: request('search'),
-            dateRange: request('daterange')
-        );
+        $query = Transaction::query()->where('user_id', auth()->user()->id);
+
+        if (request()->has('search') && !empty(request('search'))) {
+            $search = request('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('trx_id', 'LIKE', "%{$search}%")
+                    ->orWhere('provider', 'LIKE', "%{$search}%")
+                    ->orWhere('description', 'LIKE', "%{$search}%")
+                    ->orWhereHas('user', function ($userQuery) use ($search) {
+                        $userQuery->where('email', 'LIKE', "%{$search}%");
+                    });
+            });
+        }
+
+        if (request()->has('currency') && !empty(request('currency'))) {
+            $query->where('currency', request('currency'));
+        }
+
+        if (request()->has('daterange') && !empty(request('daterange'))) {
+            $dates = explode(' - ', request('daterange'));
+            if (count($dates) == 2) {
+                $from = date('Y-m-d 00:00:00', strtotime($dates[0]));
+                $to   = date('Y-m-d 23:59:59', strtotime($dates[1]));
+                $query->whereBetween('created_at', [$from, $to]);
+            }
+        }
+
+        $perPage = request('per_page', 10);
+
+        $transactions = $query->orderBy('created_at', 'desc')->paginate($perPage)->appends(request()->query());
 
         $currency = Currency::where('status', 1)->get();
+
         $page_name = 'Archived Transactions';
 
         return view('frontend.user.transaction.index', compact('transactions', 'currency', 'page_name'));

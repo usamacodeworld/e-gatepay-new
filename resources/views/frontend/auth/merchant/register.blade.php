@@ -18,8 +18,8 @@
     @endphp
 
     <!-- Enhanced register background with floating shapes -->
-    <div class="auth-background register-background">
-        <div class="floating-shapes"></div>
+    <div class="auth-background">
+
         <div class="auth-container register-container">
             <div class="auth-card">
                 <!-- Enhanced logo design matching login page -->
@@ -84,7 +84,7 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label">Country</label>
-                            <select class="auth-input" id="countrySelect"  name="country" required>
+                            <select class="auth-input" id="countrySelect" name="country" required>
                                 <option selected disabled>{{ __('Select Country') }}</option>
                                 @foreach ($allCountries as $country)
                                     <option value="{{ $country['code'] . ':' . $country['dial_code'] }}"

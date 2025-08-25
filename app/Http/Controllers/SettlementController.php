@@ -22,7 +22,6 @@ class SettlementController extends Controller
             ->where('status', '!=', 'decline')
             ->orderBy('created_at', 'desc');
 
-        // ✅ Date range filter
         if ($request->filled('daterange')) {
             $dates = explode(',', $request->daterange);
             if (count($dates) === 2) {
@@ -31,13 +30,11 @@ class SettlementController extends Controller
                 $query->whereBetween('created_at', [$start . ' 00:00:00', $end . ' 23:59:59']);
             }
         }
-
-        // ✅ Currency filter (if you have a currency column)
-        if ($request->filled('currency')) {
-            $query->where('currency', $request->currency);
+        if ($request->filled('status')) {
+            $query->where('status', $request->status);
         }
-
-        $settlements = $query->paginate(10);
+        $perPage = request('per_page', 10);
+        $settlements = $query->orderBy('created_at', 'desc')->paginate($perPage)->appends(request()->query());
         $page_name = 'Settlements';
         return view('frontend.user.settlements.index', compact('settlements', 'page_name'));
     }
@@ -68,7 +65,6 @@ class SettlementController extends Controller
             ->where('status', 'decline')
             ->orderBy('created_at', 'desc');
 
-        // ✅ Date range filter
         if ($request->filled('daterange')) {
             $dates = explode(',', $request->daterange);
             if (count($dates) === 2) {
@@ -77,9 +73,12 @@ class SettlementController extends Controller
                 $query->whereBetween('created_at', [$start . ' 00:00:00', $end . ' 23:59:59']);
             }
         }
-
-        $settlements = $query->paginate(10);
-        $page_name = 'Dispursal';
+        if ($request->filled('status')) {
+            $query->where('status', $request->status);
+        }
+        $perPage = request('per_page', 10);
+        $settlements = $query->orderBy('created_at', 'desc')->paginate($perPage)->appends(request()->query());
+        $page_name = 'Dispersal';
         return view('frontend.user.settlements.index', compact('settlements', 'page_name'));
     }
 
