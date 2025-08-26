@@ -48,6 +48,7 @@
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="{{ asset('general/js/simple-notify.min.js') }}"></script>
     <script src="{{ asset('general/js/helpers.js') }}"></script>
+    
     @include('general._notify_evs')
     <script>
         $(function() {

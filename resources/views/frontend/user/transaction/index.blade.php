@@ -150,8 +150,8 @@
                                             ];
                                             $responseCode = $trxData['response_code'] ?? $responseDetails['code'];
                                         @endphp
-                                        <tr data-bs-toggle="modal" data-bs-target="#transactionModal{{ $transaction->id }}"
-                                            style="cursor:pointer">
+                                        <tr style="cursor:pointer">
+
                                             <td>{{ $transaction->created_at?->format('d M Y, h:i A') }}</td>
                                             <td>{{ $trxData['merchant_name'] ?? '-' }}</td>
                                             <td>{{ $transaction->trx_type->label() }}</td>
@@ -170,7 +170,8 @@
                                             <td>{{ $trxData['customer_email'] ?? ($transaction->user->email ?? '-') }}</td>
                                             <td>
                                                 <button class="btn btn-sm btn-primary" data-bs-toggle="modal"
-                                                    data-bs-target="#transactionModal{{ $transaction->id }}">
+                                                    data-bs-target="#transactionModal{{ $transaction->id }}"
+                                                    onclick="event.stopPropagation();">
                                                     View
                                                 </button>
                                             </td>
